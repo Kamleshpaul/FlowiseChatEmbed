@@ -1,7 +1,7 @@
-import { ShortTextArea } from './ShortTextArea'
 import { SendButton } from '@/components/SendButton'
 import { isMobile } from '@/utils/isMobileSignal'
 import { createSignal, onMount } from 'solid-js'
+import { ShortTextInput } from './ShortTextInput'
 
 type Props = {
     placeholder?: string
@@ -56,8 +56,8 @@ export const TextInput = (props: Props) => {
             }}
             onKeyDown={submitWhenEnter}
         >
-            <ShortTextArea
-                ref={inputRef as HTMLTextAreaElement}
+            <ShortTextInput
+                ref={inputRef as HTMLInputElement}
                 onInput={handleInput}
                 value={inputValue()}
                 fontSize={props.fontSize}
